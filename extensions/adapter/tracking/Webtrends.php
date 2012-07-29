@@ -15,7 +15,7 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 	 * currently only supports 9
 	 * @var string
 	 */
-	protected $_version = '9.4.0';
+	protected $_version = '10.2.29';
 
 	/**
 	 * Domain to be tracked

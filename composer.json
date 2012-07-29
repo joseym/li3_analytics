@@ -1,9 +1,9 @@
 {
-	"name": "joseym/li3_analytics",
+	"name": "mdx-dev/li3_analytics",
 	"type": "li3-libraries",
 	"description": "Analytic Plugin for Lithium PHP",
 	"keywords": ["google analytics", "optimizely", "js", "lithium", "li3", "analytics", "chartbeat", "webtrends"],
-	"homepage": "https://github.com/joseym/li3_analytics/blob/master/README.md",
+	"homepage": "https://github.com/mdx-dev/li3_analytics/blob/master/README.md",
 	"license": "MIT License",
 	"authors": [
 		{
