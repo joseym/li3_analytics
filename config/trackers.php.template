@@ -44,3 +44,8 @@ Trackers::add('Chartbeat', array(
 	// 	'noCookies' => true 			// @link: http://chartbeat.com/docs/configuration_variables#nocookies
 	// )
 ));
+
+Trackers::add('comScore', array(
+	'adapter'	=> 'ComScore', 			// The Adapter
+	'account' 	=> '7545646'	        // comScore ID
+));

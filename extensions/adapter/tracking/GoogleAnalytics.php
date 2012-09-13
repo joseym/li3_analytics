@@ -24,9 +24,11 @@ class GoogleAnalytics extends \li3_analytics\extensions\adapter\Tracker {
 
 	/**
 	 * What section of the page should the script be loaded?
-	 * @var string
+	 * @var array
 	 */
-	protected $_section = "append_head";
+	protected $_views = array(
+		'append_head' => 'googleanalytics'
+	);
 
 	/**
 	 * Way to load tracker

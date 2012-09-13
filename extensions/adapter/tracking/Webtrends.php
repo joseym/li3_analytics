@@ -14,7 +14,7 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 	 * Analytics version to use
 	 * @var string
 	 */
-	protected $_version = '10.2.29';
+	protected $_version = '10.2.36';
 
 	/**
 	 * Domain to be tracked
@@ -24,9 +24,11 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 
 	/**
 	 * What section of the page should the script be loaded?
-	 * @var string
+	 * @var array
 	 */
-	protected $_section = "append_body";
+	protected $_views = array(
+		'append_head' => 'webtrends'
+	);
 
 	/**
 	 * Way to load tracker
@@ -37,7 +39,13 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_type = "block";
 
-	protected $_uri = "//statse.webtrendslive.com/";
+	protected $_uri = "statse.webtrendslive.com";
+
+	/**
+	 * Include the noscript section -- defaults to true
+	 * @var bool
+	 */
+	protected $_noscript = true;
 
 	/**
 	 * Location of the script
@@ -47,7 +55,7 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_script = '/js/webtrends.js';
 
-	protected $_autoConfig = array('DCSID', 'domain', 'version', 'section', 'uri', 'script', 'configuration', 'custom');
+	protected $_autoConfig = array('DCSID', 'domain', 'version', 'section', 'uri', 'noscript', 'script', 'configuration', 'custom');
 
 	/**
 	 * Tracking account used
@@ -96,6 +104,13 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 
 	public function custom(){
 		return !empty($this->_custom) ? $this->_custom : false;
+	}
+
+	/**
+	 * Include the noscript section
+	 */
+	public function noscript(){
+	    return $this->_noscript;
 	}
 
 }

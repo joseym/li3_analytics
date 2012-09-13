@@ -6,6 +6,8 @@ abstract class Tracker extends \lithium\core\Object {
 	
 	protected $_name;
 
+	protected $_views = array();
+
 	abstract protected function key();
 
 	public function __construct($config){
@@ -20,17 +22,12 @@ abstract class Tracker extends \lithium\core\Object {
 		parent::_init();
 	}
 
-	public function shells(){
-		return isset($this->_shells) ? $this->_shells : false;
-	}
-
 	/**
-	 * Return the trackers section
-	 * @return string
+	 * Return the tracker views
+	 * @return array
 	 */
-	public function section($section = null){
-		if($section !== null) $this->_section = $section;
-		return $this->_section;
+	public function views() {
+		return $this->_views;
 	}
 
 	/**

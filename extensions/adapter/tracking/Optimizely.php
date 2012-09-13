@@ -13,9 +13,12 @@ class Optimizely extends \li3_analytics\extensions\adapter\Tracker {
 
 	/**
 	 * What section of the page should the script be loaded?
-	 * @var string
+	 * @var array
 	 */
-	protected $_section = "prepend_head";
+	protected $_views = array(
+		'prepend_head' => 'optimizely'
+	);
+
 
 	protected $_autoConfig = array('project', 'section');
 
