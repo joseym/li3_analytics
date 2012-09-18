@@ -21,9 +21,9 @@ abstract class Tracker extends \lithium\core\Object {
 		} elseif(isset($config['section']) && count($this->_views) == 1) {
 			// Section and single view
 			$this->_views[$config['section']] = array_pop($this->_views);
-		} elseif(isset($config['section']) && count($this->_views) == 1) {
+		} elseif(isset($config['element']) && count($this->_views) == 1) {
 			// Single view and element
-			$keys = array_keys($array);
+			$keys = array_keys($this->_views);
 			$this->_views[$keys[0]] = $config['element'];
 		}
 
