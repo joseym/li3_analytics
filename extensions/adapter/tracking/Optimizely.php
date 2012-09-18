@@ -20,7 +20,7 @@ class Optimizely extends \li3_analytics\extensions\adapter\Tracker {
 	);
 
 
-	protected $_autoConfig = array('project', 'section');
+	protected $_autoConfig = array('project', 'views');
 
 	protected $_uri = "//cdn.optimizely.com/js/";
 

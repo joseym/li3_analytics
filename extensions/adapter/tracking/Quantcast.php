@@ -33,7 +33,7 @@ class Quantcast extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_type = "block";
 
-	protected $_autoConfig = array('account', 'noscript', 'section');
+	protected $_autoConfig = array('account', 'noscript', 'section', 'views');
 
 	/**
 	 * Tracking account used

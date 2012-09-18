@@ -20,7 +20,7 @@ class Chartbeat extends \li3_analytics\extensions\adapter\Tracker {
 
 	protected $_domain;
 
-	protected $_autoConfig = array('type', 'uid', 'domain', 'config' => 'merge', 'section');
+	protected $_autoConfig = array('type', 'uid', 'domain', 'config' => 'merge', 'views');
 
 	public function key(){
 		return $this->_uid;

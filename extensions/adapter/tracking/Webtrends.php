@@ -56,7 +56,7 @@ class Webtrends extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_script = '/js/webtrends.js';
 
-	protected $_autoConfig = array('DCSID', 'domain', 'version', 'section', 'uri', 'noscript', 'script', 'configuration', 'custom');
+	protected $_autoConfig = array('DCSID', 'domain', 'version', 'views', 'uri', 'noscript', 'script', 'configuration', 'custom');
 
 	/**
 	 * Tracking account used

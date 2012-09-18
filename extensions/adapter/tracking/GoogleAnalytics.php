@@ -48,7 +48,7 @@ class GoogleAnalytics extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_commands = array();
 
-	protected $_autoConfig = array('account', 'commands', 'domain', 'manyTopLevel', 'section');
+	protected $_autoConfig = array('account', 'commands', 'domain', 'manyTopLevel', 'views');
 
 	/**
 	 * Tracking account used

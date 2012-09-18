@@ -38,7 +38,7 @@ class ComScore extends \li3_analytics\extensions\adapter\Tracker {
 	    protected $_noscript = true;
 
 
-		protected $_autoConfig = array('account', 'section', 'noscript');
+		protected $_autoConfig = array('account', 'views', 'noscript');
 
 		/**
 		 * Tracking account used
