@@ -16,16 +16,16 @@
 			"email": "yoan@dosimple.ch",
 			"homepage": "http://yoan.dosimple.ch/blog/"
 		},
-       		{
-            		"name": "Nathan Phelps",
-            		"email": "nathan.phelps@vitals.com",
-            		"homepage": "https://github.com/nwp"
-	        },
-        	{
-        		"name": "Blain Schmeisser",
-        		"email": "BlaineSch@gmail.com",
-        		"homepage": "http://www.blainesch.com/"
-       	 	}
+		{
+			"name": "Nathan Phelps",
+			"email": "nathan.phelps@vitals.com",
+			"homepage": "https://github.com/nwp"
+		},
+		{
+			"name": "Blaine Schmeisser",
+			"email": "BlaineSch@gmail.com",
+			"homepage": "https://github.com/BlaineSch"
+		 	}
 	],
 
 	"require": {
