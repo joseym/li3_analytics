@@ -4,7 +4,7 @@ A plugin to assist with the assignment of Analytical services, AB tests and clic
 
 > Currently supports [Google Analytics](http://www.google.com/analytics/), [Optimizely](http://www.optimizely.com), [Webtrends Analytics 9 & 10](http://webtrends.com/products/analytics), [Chartbeat](http://chartbeat.com), and [comScore Direct](http://direct.comscore.com)
 
-[![Build Status](https://secure.travis-ci.org/mdx-dev/li3_analytics.png?branch=master)](http://travis-ci.org/mdx-dev/li3_analytics)
+[![Build Status](https://secure.travis-ci.org/joseym/li3_analytics.png?branch=master)](http://travis-ci.org/joseym/li3_analytics)
 
 ## Installation
 
@@ -16,7 +16,7 @@ Modify your projects `composer.json` file
 {
     "require": {
     	...
-        "mdx-dev/li3_analytics": "master"
+        "joseym/li3_analytics": "dev-master"
         ...
     }
 }
@@ -28,13 +28,13 @@ Run `php composer.phar install` (or `php composer.phar update`) and, aside from 
 
 __Submodule__ (If you feel like it)
 
-From the root of your app run `git submodule add git://github.com/mdx-dev/li3_analytics.git libraries/li3_analytics`
+From the root of your app run `git submodule add git://github.com/joseym/li3_analytics.git libraries/li3_analytics`
 
 ***
 
 __Clone Directly__ (meh)
 
-From your apps `libraries` directory run `git clone git://github.com/mdx-dev/li3_analytics.git`
+From your apps `libraries` directory run `git clone git://github.com/joseym/li3_analytics.git`
 
 ## Usage
 
@@ -197,4 +197,4 @@ Fork and submit a pull request, lets make this awesome.
 
 Original plugin written by [Yoan Blanc](https://github.com/greut) - He laid the foundation, give him props.
 
-Vitals.com - (my employer) - Thanks for supporting the OSS community and allowing your engineers to give back to the projects we depend on.
+Vitals.com - (my previous employer) - Thanks for supporting the OSS community and allowing your engineers to give back to the projects we depend on.
