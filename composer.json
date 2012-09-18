@@ -1,9 +1,9 @@
 {
-	"name": "mdx-dev/li3_analytics",
+	"name": "joseym/li3_analytics",
 	"type": "li3-libraries",
 	"description": "Analytic Plugin for Lithium PHP",
 	"keywords": ["google analytics", "optimizely", "js", "lithium", "li3", "analytics", "chartbeat", "webtrends", "comscore"],
-	"homepage": "https://github.com/mdx-dev/li3_analytics/blob/master/README.md",
+	"homepage": "https://github.com/joseym/li3_analytics/blob/master/README.md",
 	"license": "MIT License",
 	"authors": [
 		{
@@ -16,11 +16,16 @@
 			"email": "yoan@dosimple.ch",
 			"homepage": "http://yoan.dosimple.ch/blog/"
 		},
-        {
-            "name": "Nathan Phelps",
-            "email": "nathan.phelps@vitals.com",
-            "homepage": "https://github.com/nwp"
-        }
+       		{
+            		"name": "Nathan Phelps",
+            		"email": "nathan.phelps@vitals.com",
+            		"homepage": "https://github.com/nwp"
+	        },
+        	{
+        		"name": "Blain Schmeisser",
+        		"email": "BlaineSch@gmail.com",
+        		"homepage": "http://www.blainesch.com/"
+       	 	}
 	],
 
 	"require": {
