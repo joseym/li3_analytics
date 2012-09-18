@@ -2,7 +2,9 @@
 
 A plugin to assist with the assignment of Analytical services, AB tests and click tracking.
 
-> Currently supports [Google Analytics](http://www.google.com/analytics/), [Optimizely](http://www.optimizely.com), [Webtrends Analytics 9](http://webtrends.com/products/analytics), and [Chartbeat](http://chartbeat.com)
+> Currently supports [Google Analytics](http://www.google.com/analytics/), [Optimizely](http://www.optimizely.com), [Webtrends Analytics 9 & 10](http://webtrends.com/products/analytics), [Chartbeat](http://chartbeat.com), and [comScore Direct](http://direct.comscore.com)
+
+[![Build Status](https://secure.travis-ci.org/mdx-dev/li3_analytics.png?branch=master)](http://travis-ci.org/mdx-dev/li3_analytics)
 
 ## Installation
 
@@ -14,7 +16,7 @@ Modify your projects `composer.json` file
 {
     "require": {
     	...
-        "joseym/li3_analytics": "master"
+        "mdx-dev/li3_analytics": "master"
         ...
     }
 }
@@ -26,13 +28,13 @@ Run `php composer.phar install` (or `php composer.phar update`) and, aside from 
 
 __Submodule__ (If you feel like it)
 
-From the root of your app run `git submodule add git://github.com/joseym/li3_analytics.git libraries/li3_analytics`
+From the root of your app run `git submodule add git://github.com/mdx-dev/li3_analytics.git libraries/li3_analytics`
 
 ***
 
 __Clone Directly__ (meh)
 
-From your apps `libraries` directory run `git clone git://github.com/joseym/li3_analytics.git`
+From your apps `libraries` directory run `git clone git://github.com/mdx-dev/li3_analytics.git`
 
 ## Usage
 
@@ -76,7 +78,7 @@ __Here's an example for each tracker__
 		Trackers::add('Google', array( // name it what you'd like
 			'adapter' => 'GoogleAnalytics', 	// The Adapter
 			'account' => 'UA-999999-1', 		// your GA account
-			// 'section' => 'append_head', 		// What helper section to load tracking in your template `append_head | prepend_head`
+			// 'section' => 'append_head', 		// What helper section to load tracking in your template `append_head | prepend_head | append_body | prepend_body`
 			// 'domain' => 'dev.com', 			// set if you are using with multiple sub domains, ignore otherwise
 			// 'manyTopLevel' => true, 			// set if you are using GA with multiple top level domains
 		));
@@ -84,7 +86,7 @@ __Here's an example for each tracker__
 		Trackers::add('Optimizely', array(
 			'adapter' => 'Optimizely', 			// The Adapter
 			'project' => 'xxx123' 				// the optimizely project id
-			// 'section' => 'prepend_head', 	// What helper section to load tracking in your template `append_head | prepend_head`
+			// 'views' => array('prepend_body' => 'optimizely'), 	// What helper section to load tracking in your template `append_head | prepend_head | append_body | prepend_body`
 		));
 
 		Trackers::add('Webtrends', array(
@@ -114,6 +116,10 @@ __Here's an example for each tracker__
 			// 	'authors' => "Bob Johnson", 	// @link: http://chartbeat.com/docs/configuration_variables#groups
 			// 	'noCookies' => true 			// @link: http://chartbeat.com/docs/configuration_variables#nocookies
 			// )
+		));
+		Trackers::add('comScore', array(
+			'adapter'	=> 'ComScore', 			// The Adapter
+			'account' 	=> '123456789'	// comScore Account ID
 		));
 
 	?>
@@ -150,8 +156,15 @@ Remember that name you gave your tracker in `Trackers::add()`, well you can manu
 Here's how:
 
 ~~~ php
-<?php echo $this->analytics->google(); ?>
+<?php echo $this->analytics->google('position'); ?>
 ~~~
+
+Replace 'position' with any of the four view types listed below or none for the first view.
+
+* append_body
+* prepend_body
+* append_head
+* prepend_head
 
 Wait, what? That's it?! 
 
@@ -174,9 +187,6 @@ That's it! the proper code for your tracker should now be rendered into your tem
 Here is a list of trackers I would like to add support for.
 
 - [Clicky](http://getclicky.com/)
-- [ComScore](http://direct.comscore.com/)
-- [Quantcast](http://www.quantcast.com/)
-- [Webtrends Analytics 10](http://webtrends.com/products/analytics/)
 
 ## Contribute
 Have an idea for a tracker? Wanna take point on one of the trackers listed above? __Please do!__

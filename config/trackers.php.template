@@ -5,7 +5,7 @@ use li3_analytics\extensions\Trackers;
 Trackers::add('Google', array( // name it what you'd like
 	'adapter' => 'GoogleAnalytics', 	// The Adapter
 	'account' => 'UA-999999-1', 		// your GA account
-	// 'section' => 'append_head', 		// What helper section to load tracking in your template `append_head | prepend_head`
+	// 'section' => 'append_head', 		// What helper section to load tracking in your template `append_head | prepend_head | append_body | prepend_body`
 	// 'domain' => 'dev.com', 			// set if you are using with multiple sub domains, ignore otherwise
 	// 'manyTopLevel' => true, 			// set if you are using GA with multiple top level domains
 ));
@@ -13,7 +13,7 @@ Trackers::add('Google', array( // name it what you'd like
 Trackers::add('Optimizely', array(
 	'adapter' => 'Optimizely', 			// The Adapter
 	'project' => 'xxx123' 				// the optimizely project id
-	// 'section' => 'prepend_head', 	// What helper section to load tracking in your template `append_head | prepend_head`
+	// 'views' => array('prepend_body' => 'optimizely'), 	// What helper section to load tracking in your template `append_head | prepend_head | append_body | prepend_body`
 ));
 
 Trackers::add('Webtrends', array(
@@ -43,4 +43,9 @@ Trackers::add('Chartbeat', array(
 	// 	'authors' => "Bob Johnson", 	// @link: http://chartbeat.com/docs/configuration_variables#groups
 	// 	'noCookies' => true 			// @link: http://chartbeat.com/docs/configuration_variables#nocookies
 	// )
+));
+
+Trackers::add('comScore', array(
+	'adapter'	=> 'ComScore', 			// The Adapter
+	'account' 	=> '7545646'	        // comScore ID
 ));

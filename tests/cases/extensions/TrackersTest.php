@@ -12,7 +12,6 @@ class TrackersTest extends \lithium\test\Unit {
 	}
 
 	function test_setGoogleAnalytics() {
-
 		$config = array(
 			'adapter' => 'GoogleAnalytics',
 			'account' => 'test'
@@ -21,7 +20,7 @@ class TrackersTest extends \lithium\test\Unit {
 		$expected = array(
 			'adapter' => 'GoogleAnalytics',
 			'account' => 'test',
-			'commands' => array(array('_trackPageview')),
+			'name' => 'test',
 		);
 
 		$this->assertEqual($expected, Trackers::add('test', $config));
@@ -46,26 +45,6 @@ class TrackersTest extends \lithium\test\Unit {
 
 	}
 
-	// function test_push_command() {
-
-	// 	Trackers::push('_setDomainName', 'example.org');
-	// 	Trackers::push('_trackPageview');
-
-	// 	Trackers::config(array('test' => array(
-	// 		'account' => 'test',
-	// 		'adapter' => 'GoogleAnalytics',
-	// 	)));
-
-	// 	$expected = array(
-	// 		array('_setAccount', 'test'),
-	// 		array('_setDomainName', 'example.org'),
-	// 		array('_trackPageview')
-	// 	);
-
-	// 	$tracking = Trackers::get();
-	// 	$this->assert($expected, $tracking->commands());
-	// }
-
 	function test_getFromSession() {
 
 		Session::write(
@@ -76,8 +55,6 @@ class TrackersTest extends \lithium\test\Unit {
 			),
 			array('name' => 'default')
 		);
-
-		print_r(Session::isStarted());
 
 		Trackers::add('test', array(
 			'account' => 'test',

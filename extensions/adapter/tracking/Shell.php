@@ -19,13 +19,6 @@ class Shell extends \li3_analytics\extensions\adapter\Tracker {
 	protected $_type = "block";
 
 	/**
-	 * name of element to load
-	 * used for `block` tracking
-	 * @var [type]
-	 */
-	protected $_element = null;
-
-	/**
 	 * URI to script
 	 * @var string
 	 */
@@ -38,12 +31,12 @@ class Shell extends \li3_analytics\extensions\adapter\Tracker {
 	protected $_script = null;
 
 	/**
-	 * Tracker Location
+	 * Tracker Locations
 	 * Array means there are child tracker elements
 	 * Primary location should be the first.
-	 * @var mixed
+	 * @var array
 	 */
-	protected $_section = "append_body";
+	protected $_views = array();
 
 	/**
 	 * Configuration options for tracker
@@ -51,15 +44,11 @@ class Shell extends \li3_analytics\extensions\adapter\Tracker {
 	 */
 	protected $_config = array();
 
-	protected $_autoConfig = array('element', 'uri', 'script', 'section', 'config');
+	protected $_autoConfig = array('element', 'uri', 'script', 'views', 'config');
 
 	public function __construct($config){
 		if(isset($config['uri']) AND isset($config['script'])) $this->_type = 'inline';
 		parent::__construct($config);
-	}
-
-	public function element(){
-		return $this->_element;
 	}
 
 	public function key(){

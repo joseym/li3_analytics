@@ -6,12 +6,28 @@ abstract class Tracker extends \lithium\core\Object {
 	
 	protected $_name;
 
+	protected $_views = array();
+
 	abstract protected function key();
 
 	public function __construct($config){
 
 		parent::__construct($config);
 
+		// Backwards section/element compatibility
+		if(isset($config['section']) && isset($config['element'])) {
+			// Section and element
+			$this->_views[$config['section']] = $config['element'];
+		} elseif(isset($config['section']) && count($this->_views) == 1) {
+			// Section and single view
+			$this->_views[$config['section']] = array_pop($this->_views);
+		} elseif(isset($config['section']) && count($this->_views) == 1) {
+			// Single view and element
+			$keys = array_keys($array);
+			$this->_views[$keys[0]] = $config['element'];
+		}
+
+		// Name
 		$this->name($config['adapter']);
 
 	}
@@ -20,17 +36,12 @@ abstract class Tracker extends \lithium\core\Object {
 		parent::_init();
 	}
 
-	public function shells(){
-		return isset($this->_shells) ? $this->_shells : false;
-	}
-
 	/**
-	 * Return the trackers section
-	 * @return string
+	 * Return the tracker views
+	 * @return array
 	 */
-	public function section($section = null){
-		if($section !== null) $this->_section = $section;
-		return $this->_section;
+	public function views() {
+		return $this->_views;
 	}
 
 	/**
