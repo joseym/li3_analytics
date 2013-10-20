@@ -1,6 +1,6 @@
 {
 	"name": "joseym/li3_analytics",
-	"type": "li3-libraries",
+	"type": "lithium-library",
 	"description": "Analytic Plugin for Lithium PHP",
 	"keywords": ["google analytics", "optimizely", "js", "lithium", "li3", "analytics", "chartbeat", "webtrends", "comscore"],
 	"homepage": "https://github.com/joseym/li3_analytics/blob/master/README.md",
@@ -30,7 +30,7 @@
 
 	"require": {
 		"php": ">=5.3",
-		"joseym/li3_installer": "master"
+		"composer/installers": "dev-master"
 	}
 
 }
